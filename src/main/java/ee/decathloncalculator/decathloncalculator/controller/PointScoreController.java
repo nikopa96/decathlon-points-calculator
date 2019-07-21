@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "pointScore")
@@ -20,7 +21,7 @@ public class PointScoreController {
 
     @PostMapping(path = "getPoints")
     @CrossOrigin
-    public PointScore getPointScore(@RequestBody @Valid PointScore pointScore) {
+    public Optional<PointScore> getPointScore(@RequestBody @Valid PointScore pointScore) {
         return pointScoreService.getPointScore(pointScore);
     }
 }

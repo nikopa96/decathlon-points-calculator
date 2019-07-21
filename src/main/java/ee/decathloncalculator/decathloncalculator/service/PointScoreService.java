@@ -19,7 +19,7 @@ public class PointScoreService {
         this.sportRepository = sportRepository;
     }
 
-    public PointScore getPointScore(PointScore pointScore) {
+    public Optional<PointScore> getPointScore(PointScore pointScore) {
         Optional<Sport> sport = sportRepository.findById(pointScore.getSport().getId());
 
         if (sport.isPresent()) {
@@ -29,9 +29,9 @@ public class PointScoreService {
             pointScore.setSport(sport.get());
             pointScore.setPoints(points);
 
-            return pointScore;
+            return Optional.of(pointScore);
         } else {
-            return null;
+            return Optional.empty();
         }
     }
 }
