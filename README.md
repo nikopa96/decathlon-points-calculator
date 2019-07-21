@@ -2,7 +2,7 @@
 
 Start Application
 --------
-* Run the main method in DecathlonCalculatorApplication.class
+* Run the main method in DecathlonCalculatorApplication.java
 
 Start UI
 --------
